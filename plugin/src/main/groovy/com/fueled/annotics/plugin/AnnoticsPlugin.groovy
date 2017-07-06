@@ -29,8 +29,8 @@ class AnnoticsPlugin implements Plugin<Project> {
         }
 
         project.dependencies {
-            compile 'com.github.fueled.annotics:annotations:initial-version-SNAPSHOT'
-            compile 'com.github.fueled.annotics:runtime:initial-version-SNAPSHOT'
+            compile 'com.github.fueled.annotics:annotations:runtime-release-SNAPSHOT'
+            compile 'com.github.fueled.annotics:runtime:runtime-release-SNAPSHOT'
 
             compile 'org.aspectj:aspectjrt:1.8.10'
         }
