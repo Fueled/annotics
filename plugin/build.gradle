@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+apply plugin: 'checkstyle'
+apply from: "../extra/checkstyle/checkstyle_java_library.gradle"
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = libraryGroup
+version = libraryVersion
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile libraries.gradleBuildTools
+    compile libraries.aspectJTools
+    compile libraries.aspectJRuntime
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

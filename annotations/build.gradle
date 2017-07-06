@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+apply from: "../extra/checkstyle/checkstyle_java_library.gradle"
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = libraryGroup
+version = libraryVersion
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

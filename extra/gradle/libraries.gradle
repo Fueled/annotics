@@ -1,0 +1,54 @@
+ext {
+
+    //library
+    compileSdk = 25
+    buildTools = "25.0.3"
+    minSdk = 16
+    targetSdk = 25
+    sampleAppId = "com.fueled.annotics.sample"
+
+    libraryGroup = 'com.github.fueled'
+    libraryVersion = '0.1.1'
+
+    //android libraries
+    supportVersion = '25.3.0'
+    gradleBuildToolsVersion = '2.3.3'
+
+    //aspectJ
+    aspectJVersion = '1.8.10'
+
+    //test libraries
+    junitVersion = '4.12'
+    tesetRunnerVersion = '0.5'
+    hamcrestVersion = '1.4-atlassian-1'
+    espressoVersion = '2.2.2'
+    mockitoVersion = '1.10.19'
+
+    //Analytics libraries
+    googleAnalticsVersion = '11.0.2'
+    segmentVersion = '4.3.0-RC1'
+
+    libraries = [
+            appCompat       : "com.android.support:appcompat-v7:${supportVersion}",
+            designSupport   : "com.android.support:design:${supportVersion}",
+            vectorSupport   : "com.android.support:support-vector-drawable:${supportVersion}",
+            gradleBuildTools: "com.android.tools.build:gradle:${gradleBuildToolsVersion}",
+
+            aspectJTools    : "org.aspectj:aspectjtools:${aspectJVersion}",
+            aspectJRuntime  : "org.aspectj:aspectjrt:${aspectJVersion}",
+
+            googleAnalytics : "com.google.android.gms:play-services-analytics:${googleAnalticsVersion}",
+            segment         : "com.segment.analytics.android:analytics:${segmentVersion}"
+    ]
+
+    testLibraries = [
+            junit             : "junit:junit:${junitVersion}",
+            supportAnnotations: "com.android.support:support-annotations:${supportVersion}",
+            testRunner        : "com.android.support.test:runner:${tesetRunnerVersion}",
+            testRule          : "com.android.support.test:rules:${tesetRunnerVersion}",
+            hamcrest          : "org.hamcrest:hamcrest-library:${hamcrestVersion}",
+            espresso          : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            mockito           : "org.mockito:mockito-core:${mockitoVersion}"
+    ]
+
+}
