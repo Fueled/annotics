@@ -19,4 +19,6 @@ public @interface TrackEvent {
 
     EventType type() default EventType.TRACK;
 
+    boolean trackParameters() default true;
+
 }

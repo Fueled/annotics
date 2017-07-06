@@ -64,13 +64,14 @@ public class AnnoticsProcessor {
 
         String eventName = (eventAnnotation != null) ? eventAnnotation.value() : codeSignature.getName();
         EventType eventType = (eventAnnotation != null) ? eventAnnotation.type() : EventType.TRACK;
+        boolean trackParameters = eventAnnotation == null || eventAnnotation.trackParameters();
 
         String[] parameterNames = codeSignature.getParameterNames();
         Object[] parameterValues = joinPoint.getArgs();
 
         EventData eventData = new EventData();
 
-        for (int i = 0; i < parameterValues.length; i++) {
+        for (int i = 0; i < parameterValues.length && trackParameters; i++) {
             EventValue annotation = getEventValueAnnotation(parameterAnnotations[i]);
             String valueName = parameterNames[i];
             boolean isHidden = false;
