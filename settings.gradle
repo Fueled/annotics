@@ -1,1 +1,1 @@
-include ':sample', ':annotations', ':plugin', ':runtime', ':consumer-segment', ':consumer-google'
+include ':sample', ':annotations', ':plugin', ':runtime', ':adapter-segment', ':adapter-google'

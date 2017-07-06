@@ -2,7 +2,7 @@ package com.fueled.annotics.segment;
 
 import android.support.annotation.NonNull;
 
-import com.fueled.annotics.AnalyticsConsumer;
+import com.fueled.annotics.AnalyticsAdapter;
 import com.fueled.annotics.DataMap;
 import com.fueled.annotics.EventData;
 import com.fueled.annotics.UserData;
@@ -17,11 +17,11 @@ import java.util.Map;
  * Created by hussein@fueled.com on 05/07/2017.
  * Copyright (c) 2017 Fueled. All rights reserved.
  */
-public class SegmentConsumer implements AnalyticsConsumer {
+public class SegmentAdapter implements AnalyticsAdapter {
 
     private Analytics delegate;
 
-    public SegmentConsumer(@NonNull Analytics analytics) {
+    public SegmentAdapter(@NonNull Analytics analytics) {
         this.delegate = analytics;
     }
 

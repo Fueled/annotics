@@ -8,20 +8,20 @@ import com.fueled.annotics.util.Utils;
  * Created by hussein@fueled.com on 04/07/2017.
  * Copyright (c) 2017 Fueled. All rights reserved.
  */
-public class Annotics implements AnalyticsConsumer {
+public class Annotics implements AnalyticsAdapter {
 
     private static Annotics instance;
 
-    private final AnalyticsConsumer delegate;
+    private final AnalyticsAdapter delegate;
 
     private boolean enabled = true;
 
-    private Annotics(@NonNull AnalyticsConsumer analyticsConsumer) {
-        this.delegate = analyticsConsumer;
+    private Annotics(@NonNull AnalyticsAdapter analyticsAdapter) {
+        this.delegate = analyticsAdapter;
     }
 
     @NonNull
-    public AnalyticsConsumer getAnalyticsConsumer() {
+    public AnalyticsAdapter getAnalyticsAdapter() {
         return delegate;
     }
 
@@ -37,16 +37,16 @@ public class Annotics implements AnalyticsConsumer {
         return instance != null;
     }
 
-    public static Annotics init(@NonNull AnalyticsConsumer analyticsConsumer) {
-        instance = new Annotics(Utils.requireNonNull(analyticsConsumer,
-                "AnalyticsConsumer must be non null."));
+    public static Annotics init(@NonNull AnalyticsAdapter analyticsAdapter) {
+        instance = new Annotics(Utils.requireNonNull(analyticsAdapter,
+                "AnalyticsAdapter must be non null."));
 
         return instance;
     }
 
     public static Annotics get() {
         return Utils.requireNonNull(instance,
-                "You must call Annotics#init(AnalyticsConsumer) first.");
+                "You must call Annotics#init(AnalyticsAdapter) first.");
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.fueled.annotics.google;
 
 import android.support.annotation.NonNull;
 
-import com.fueled.annotics.AnalyticsConsumer;
+import com.fueled.annotics.AnalyticsAdapter;
 import com.fueled.annotics.DataMap;
 import com.fueled.annotics.EventData;
 import com.fueled.annotics.UserData;
@@ -15,11 +15,11 @@ import java.util.Map;
  * Created by hussein@fueled.com on 05/07/2017.
  * Copyright (c) 2017 Fueled. All rights reserved.
  */
-public class GoogleConsumer implements AnalyticsConsumer {
+public class GoogleAdapter implements AnalyticsAdapter {
 
     private Tracker delegate;
 
-    public GoogleConsumer(@NonNull Tracker tracker) {
+    public GoogleAdapter(@NonNull Tracker tracker) {
         this.delegate = tracker;
     }
 

@@ -19,7 +19,15 @@ public class TrackedClass {
     }
 
     /**
-     * Track a normal event. Parameters can be hidden using the {@link EventValue} annotation and
+     * Track a normal event, but hide all method parameters from the event.
+     */
+    @TrackEvent(value = "EVENT_UPDATE_CARD_INFO", trackParameters = false)
+    public void updateCardInformation(String cardNumber, String expDate, String cvv) {
+
+    }
+
+    /**
+     * Only specific parameters can also be hidden using the {@link EventValue} annotation and
      * specifying the {@link EventValue#hidden()} as {@code true}.
      */
     @TrackEvent("EVENT_LOGIN")
@@ -28,8 +36,8 @@ public class TrackedClass {
     }
 
     /**
-     * Track a normal event but specify custom names for the parameters by using the
-     * {@link EventValue} annotation and specifying a value for it.
+     * It's also possible to specify custom names for the parameters by using the
+     * {@link EventValue} annotation and specifying a value for the name to be used.
      */
     @TrackEvent("EVENT_UPDATE_ACCOUNT")
     public void updateAccount(@EventValue("First Name") String firstName,

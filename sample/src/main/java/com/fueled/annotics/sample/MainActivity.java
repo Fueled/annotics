@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TrackedClass trackedClass = new TrackedClass("Testing");
+        trackedClass.updateCardInformation("4243-534343-5353-434", "12/18", "321");
         trackedClass.login("jane_doe@gmail.com", "test12345");
         trackedClass.updateAccount("Jane", "Doe");
     }
