@@ -29,8 +29,8 @@ class AnnoticsPlugin implements Plugin<Project> {
         }
 
         project.dependencies {
-            compile 'com.github.fueled.annotics:annotations:2a17631654'
-            compile 'com.github.fueled.annotics:runtime:2a17631654'
+            compile 'com.github.fueled.annotics:annotations:0.1.2-alpha'
+            compile 'com.github.fueled.annotics:runtime:0.1.2-alpha'
 
             compile 'org.aspectj:aspectjrt:1.8.10'
         }
