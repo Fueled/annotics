@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'annotics'
 apply plugin: 'checkstyle'
 apply from: "../extra/checkstyle/checkstyle.gradle"
 

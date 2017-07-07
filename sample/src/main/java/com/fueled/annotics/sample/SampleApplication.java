@@ -14,6 +14,6 @@ public class SampleApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Annotics.init(new TestConsumer());
+        Annotics.init(new TestAdapter());
     }
 }

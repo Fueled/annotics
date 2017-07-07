@@ -2,7 +2,7 @@ package com.fueled.annotics.sample;
 
 import android.util.Log;
 
-import com.fueled.annotics.AnalyticsConsumer;
+import com.fueled.annotics.AnalyticsAdapter;
 import com.fueled.annotics.DataMap;
 import com.fueled.annotics.EventData;
 import com.fueled.annotics.UserData;
@@ -13,9 +13,9 @@ import java.util.Map;
  * Created by hussein@fueled.com on 06/07/2017.
  * Copyright (c) 2017 Fueled. All rights reserved.
  */
-public class TestConsumer implements AnalyticsConsumer {
+public class TestAdapter implements AnalyticsAdapter {
 
-    private static final String TAG = TestConsumer.class.getSimpleName();
+    private static final String TAG = TestAdapter.class.getSimpleName();
 
     @Override
     public void identify(String userId) {

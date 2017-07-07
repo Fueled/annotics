@@ -1,6 +1,9 @@
 # Annotics [![](https://jitpack.io/v/Fueled/annotics.svg)](https://jitpack.io/#Fueled/annotics)
 Annotation-triggered method call event tracking.
 
+## Disclaimer
+Please note that this library is still under development and all its APIs are subjected to change.
+
 ## Install
 Add the changes below to your root `build.gradle`:
 
@@ -13,7 +16,7 @@ buildscript {
 
     dependencies {
         ...
-        classpath 'com.github.fueled.annotics:plugin:{ANNOTICS_VERSION}'
+        classpath 'com.github.fueled.annotics:plugin:0.1.2-alpha'
     }
 }
 
@@ -49,12 +52,12 @@ The list below shows the libraries that are currentlly supported:
 
 * Google Analytics:
 ```groovy
-compile 'com.github.fueled.annotics:adapter-google:{ANNOTICS_VERSION}'
+compile 'com.github.fueled.annotics:adapter-google:0.1.2-alpha'
 ```
 * Segment:
 
 ```groovy
-compile 'com.github.fueled.annotics:adapter-segment:{ANNOTICS_VERSION}'
+compile 'com.github.fueled.annotics:adapter-segment:0.1.2-alpha'
 ```
 
 # Usage
