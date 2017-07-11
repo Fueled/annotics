@@ -16,7 +16,7 @@ public class AnalyticsAdapterSet implements AnalyticsAdapter {
 
     private List<AnalyticsAdapter> adapters;
 
-    public AnalyticsAdapterSet(AnalyticsAdapter... adapters) {
+    public AnalyticsAdapterSet(@NonNull AnalyticsAdapter... adapters) {
         this.adapters = new ArrayList<>(Arrays.asList(adapters));
     }
 

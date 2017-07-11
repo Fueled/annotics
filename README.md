@@ -41,6 +41,10 @@ public class SampleApplication extends Application {
         super.onCreate();
 
         Annotics.init(new SegmentAdapter());
+        
+        // or if you want to use multiple adapters
+        
+        Annotics.init(new AdapterOne(), new AdapterTwo(), ...);
     }
 }
 ```
@@ -48,7 +52,7 @@ When initializing Annotics you will need to provide it with an adapter to the an
 
 You can implement your own adapter by simply creating a custom class that implements the interface `AnalyticsAdapter` or by simply using an adapter for one of the supported libraries.
 
-The list below shows the libraries that are currentlly supported:
+The list below shows the libraries that are currently supported:
 
 * Google Analytics:
 ```groovy
@@ -60,9 +64,9 @@ compile 'com.github.fueled.annotics:adapter-google:0.1.2-alpha'
 compile 'com.github.fueled.annotics:adapter-segment:0.1.2-alpha'
 ```
 
-# Usage
+## Usage
 
-Event can be easily tracked by annotiating either the constuctor or the method you want to track with the `@TrackEvent` annotation. You will then have to specify the event name and the event type. Specifying an event type is optional as by default `EventType.TRACK` is used. The recorded event will also include all parameters passed to the method as event properties.
+Event can be easily tracked by annotating either the constructor or the method you want to track with the `@TrackEvent` annotation. You will then have to specify the event name and the event type. Specifying an event type is optional as by default `EventType.TRACK` is used. The recorded event will also include all parameters passed to the method as event properties.
 ```java
 @TrackEvent(value = "ACCOUNT_SCREEN", type = EventType.SCREEN_VIEW)
 public TrackedClass(String title) {
@@ -94,7 +98,7 @@ public void updateAccount(@EventValue("First Name") String firstName, @EventValu
 }
 ```
 
-# License
+## License
 
     Copyright 2017 Fueled
 
