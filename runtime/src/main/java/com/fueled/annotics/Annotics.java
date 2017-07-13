@@ -44,6 +44,10 @@ public class Annotics implements AnalyticsAdapter {
         return instance;
     }
 
+    public static Annotics init(@NonNull AnalyticsAdapter... adapters) {
+        return init(new AnalyticsAdapterSet(adapters));
+    }
+
     public static Annotics get() {
         return Utils.requireNonNull(instance,
                 "You must call Annotics#init(AnalyticsAdapter) first.");
