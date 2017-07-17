@@ -31,7 +31,7 @@ public class TrackedClass {
      * specifying the {@link EventValue#hidden()} as {@code true}.
      */
     @TrackEvent("EVENT_LOGIN")
-    public void login(String email, @IgnoreParam String password) {
+    public void login(String email, @EventValue(hidden = true) String password) {
 
     }
 
