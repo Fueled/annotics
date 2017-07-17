@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 
 import com.fueled.annotics.EventType;
 import com.fueled.annotics.EventValue;
+import com.fueled.annotics.IgnoreParam;
 import com.fueled.annotics.SharedAttributes;
 import com.fueled.annotics.SharedValue;
 import com.fueled.annotics.TrackEvent;
@@ -68,6 +69,7 @@ public class AnnoticsMetadata {
     @NonNull
     public AnnoticsParameter getParameter(int index) {
         EventValue annotation = getEventValueAnnotation(parameterAnnotations[index]);
+        IgnoreParam isIgnored = getIgnoreValueAnnotation(parameterAnnotations[index]);
 
         AnnoticsParameter parameter = new AnnoticsParameter();
         parameter.name = parameterNames[index];
@@ -75,7 +77,10 @@ public class AnnoticsMetadata {
 
         if (annotation != null) {
             parameter.name = annotation.value().isEmpty() ? parameter.name : annotation.value();
-            parameter.hidden = annotation.hidden();
+        }
+
+        if (isIgnored != null) {
+            parameter.hidden = true;
         }
 
         return parameter;
@@ -85,6 +90,16 @@ public class AnnoticsMetadata {
         for (Annotation annotation : annotations) {
             if (annotation instanceof EventValue) {
                 return (EventValue) annotation;
+            }
+        }
+
+        return null;
+    }
+
+    private IgnoreParam getIgnoreValueAnnotation(Annotation[] annotations) {
+        for (Annotation annotation : annotations) {
+            if (annotation instanceof IgnoreParam) {
+                return (IgnoreParam) annotation;
             }
         }
 

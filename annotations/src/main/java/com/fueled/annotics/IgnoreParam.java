@@ -7,13 +7,12 @@ import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Created by hussein@fueled.com on 03/07/2017.
  * Copyright (c) 2017 Fueled. All rights reserved.
+ *
+ * @author arun@fueled.com
  */
+
 @Target({PARAMETER})
 @Retention(RUNTIME)
-public @interface EventValue {
-
-    String value() default "";
-
+public @interface IgnoreParam {
 }
