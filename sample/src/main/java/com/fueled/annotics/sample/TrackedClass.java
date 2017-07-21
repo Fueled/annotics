@@ -2,12 +2,18 @@ package com.fueled.annotics.sample;
 
 import com.fueled.annotics.EventType;
 import com.fueled.annotics.EventValue;
+import com.fueled.annotics.IgnoreParam;
+import com.fueled.annotics.SharedAttributes;
+import com.fueled.annotics.SharedValue;
 import com.fueled.annotics.TrackEvent;
 
 /**
  * Created by hussein@fueled.com on 06/07/2017.
  * Copyright (c) 2017 Fueled. All rights reserved.
  */
+@SharedAttributes({
+        @SharedValue(key = "SCREEN_NAME", value = "HOME")
+})
 public class TrackedClass {
 
     /**
@@ -27,11 +33,10 @@ public class TrackedClass {
     }
 
     /**
-     * Only specific parameters can also be hidden using the {@link EventValue} annotation and
-     * specifying the {@link EventValue#hidden()} as {@code true}.
+     * Only specific parameters can also be hidden using the {@link IgnoreParam} annotation.
      */
     @TrackEvent("EVENT_LOGIN")
-    public void login(String email, @EventValue(hidden = true) String password) {
+    public void login(String email, @IgnoreParam String password) {
 
     }
 
