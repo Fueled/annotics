@@ -16,7 +16,7 @@ buildscript {
 
     dependencies {
         ...
-        classpath 'com.github.fueled.annotics:plugin:0.1.2-alpha'
+        classpath 'com.github.fueled.annotics:plugin:0.1.3-alpha'
     }
 }
 
@@ -56,12 +56,12 @@ The list below shows the libraries that are currently supported:
 
 * Google Analytics:
 ```groovy
-compile 'com.github.fueled.annotics:adapter-google:0.1.2-alpha'
+compile 'com.github.fueled.annotics:adapter-google:0.1.3-alpha'
 ```
 * Segment:
 
 ```groovy
-compile 'com.github.fueled.annotics:adapter-segment:0.1.2-alpha'
+compile 'com.github.fueled.annotics:adapter-segment:0.1.3-alpha'
 ```
 
 ## Usage
@@ -82,10 +82,10 @@ public void updateCardInformation(String cardNumber, String expDate, String cvv)
 }
 ```
 
-Only specific parameters can also be hidden using the `EventValue` annotation and specifying the `EventValue#hidden()` as `true`.
+Only specific parameters can also be hidden using the `IgnoreParam` annotation.
 ```java
 @TrackEvent("EVENT_LOGIN")
-public void login(String email, @EventValue(hidden = true) String password) {
+public void login(String email, @IgnoreParam String password) {
     ...
 }
 ```
@@ -97,6 +97,17 @@ public void updateAccount(@EventValue("First Name") String firstName, @EventValu
     ...
 }
 ```
+
+Finally you can add shared event values to a class file and these values will be automatically added as properties to all events in that class.
+```java
+@SharedAttributes({
+        @SharedValue(key = "SCREEN_NAME", value = "HOME")
+})
+public class TrackedClass {
+    ...
+}
+```
+
 
 ## License
 
