@@ -17,14 +17,14 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * For example,
  * <pre><code>
  * @TrackEvent("EVENT_UPDATE_ACCOUNT")
- * public void updateAccount(@EventValue("First Name") String firstName) {
+ * public void updateAccount(@EventProperty("First Name") String firstName) {
  *  ...
  * }
  * </code></pre>
  */
 @Target({PARAMETER})
 @Retention(RUNTIME)
-public @interface EventValue {
+public @interface EventProperty {
 
     /**
      * The name to be used for the parameter when added as a property to the event.

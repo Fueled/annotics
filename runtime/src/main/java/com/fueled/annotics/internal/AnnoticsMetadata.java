@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.fueled.annotics.EventType;
-import com.fueled.annotics.EventValue;
+import com.fueled.annotics.EventProperty;
 import com.fueled.annotics.IgnoreParam;
 import com.fueled.annotics.SharedAttributes;
 import com.fueled.annotics.SharedValue;
@@ -68,7 +68,7 @@ public class AnnoticsMetadata {
 
     @NonNull
     public AnnoticsParameter getParameter(int index) {
-        EventValue annotation = getEventValueAnnotation(parameterAnnotations[index]);
+        EventProperty annotation = getEventValueAnnotation(parameterAnnotations[index]);
         IgnoreParam isIgnored = getIgnoreValueAnnotation(parameterAnnotations[index]);
 
         AnnoticsParameter parameter = new AnnoticsParameter();
@@ -86,10 +86,10 @@ public class AnnoticsMetadata {
         return parameter;
     }
 
-    private static EventValue getEventValueAnnotation(Annotation[] annotations) {
+    private static EventProperty getEventValueAnnotation(Annotation[] annotations) {
         for (Annotation annotation : annotations) {
-            if (annotation instanceof EventValue) {
-                return (EventValue) annotation;
+            if (annotation instanceof EventProperty) {
+                return (EventProperty) annotation;
             }
         }
 
