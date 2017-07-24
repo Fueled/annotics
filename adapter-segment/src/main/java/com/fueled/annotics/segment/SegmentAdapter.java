@@ -25,36 +25,57 @@ public class SegmentAdapter implements AnalyticsAdapter {
         this.delegate = analytics;
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void identify(String userId) {
         delegate.identify(userId);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void identify(String userId, UserData userData) {
         delegate.identify(userId, getTraits(userData), null);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void track(String event) {
         delegate.track(event);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void track(String event, EventData eventData) {
         delegate.track(event, getProperties(eventData));
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void screen(String name) {
         delegate.screen(name);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void screen(String name, EventData eventData) {
         delegate.screen(name, getProperties(eventData));
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void rest() {
         delegate.reset();
