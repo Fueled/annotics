@@ -23,21 +23,33 @@ public class GoogleAdapter implements AnalyticsAdapter {
         this.delegate = tracker;
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void identify(String userId) {
         delegate.set("&uid", userId);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void identify(String userId, UserData userData) {
         identify(userId);
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void track(String event) {
         delegate.send(new HitBuilders.EventBuilder().setAction(event).build());
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void track(String event, EventData eventData) {
         delegate.send(populateHitBuilder(
@@ -46,12 +58,18 @@ public class GoogleAdapter implements AnalyticsAdapter {
         ).build());
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void screen(String name) {
         delegate.setScreenName(name);
         delegate.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void screen(String name, EventData eventData) {
         delegate.setScreenName(name);
@@ -61,6 +79,9 @@ public class GoogleAdapter implements AnalyticsAdapter {
         ).build());
     }
 
+    /**
+     * @inheritDoc
+     */
     @Override
     public void rest() {
         identify(null);
