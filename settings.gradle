@@ -1,1 +1,1 @@
-include ':sample', ':annotations', ':plugin', ':runtime', ':adapter-segment', ':adapter-google'
+include ':sample', ':annotations', ':plugin', ':runtime', ':adapter-segment', ':adapter-google', ':adapter-mixpanel'
