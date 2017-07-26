@@ -27,6 +27,7 @@ ext {
     //Analytics libraries
     googleAnalticsVersion = '11.0.2'
     segmentVersion = '4.3.0-RC1'
+    mixpanelVersion = '5.1.4'
 
     libraries = [
             appCompat       : "com.android.support:appcompat-v7:${supportVersion}",
@@ -38,7 +39,8 @@ ext {
             aspectJRuntime  : "org.aspectj:aspectjrt:${aspectJVersion}",
 
             googleAnalytics : "com.google.android.gms:play-services-analytics:${googleAnalticsVersion}",
-            segment         : "com.segment.analytics.android:analytics:${segmentVersion}"
+            segment         : "com.segment.analytics.android:analytics:${segmentVersion}",
+            mixpanel        : "com.mixpanel.android:mixpanel-android:${mixpanelVersion}"
     ]
 
     testLibraries = [
