@@ -16,7 +16,7 @@ buildscript {
 
     dependencies {
         ...
-        classpath 'com.github.fueled.annotics:plugin:0.1.3-alpha'
+        classpath 'com.github.fueled.annotics:plugin:0.1.4-alpha'
     }
 }
 
@@ -56,12 +56,18 @@ The list below shows the libraries that are currently supported:
 
 * Google Analytics:
 ```groovy
-compile 'com.github.fueled.annotics:adapter-google:0.1.3-alpha'
+compile 'com.github.fueled.annotics:adapter-google:0.1.4-alpha'
 ```
 * Segment:
 
 ```groovy
-compile 'com.github.fueled.annotics:adapter-segment:0.1.3-alpha'
+compile 'com.github.fueled.annotics:adapter-segment:0.1.4-alpha'
+```
+
+* Mixpanel:
+
+```groovy
+compile 'com.github.fueled.annotics:adapter-mixpanel:0.1.4-alpha'
 ```
 
 ## Usage
@@ -90,10 +96,10 @@ public void login(String email, @IgnoreParam String password) {
 }
 ```
 
-It's also possible to specify custom names for the parameters by using the `EventValue` annotation and specifying a value for the name to be used.
+It's also possible to specify custom names for the parameters by using the `EventProperty` annotation and specifying a value for the name to be used.
 ```java
 @TrackEvent("EVENT_UPDATE_ACCOUNT")
-public void updateAccount(@EventValue("First Name") String firstName, @EventValue("Last Name") String lastName) {
+public void updateAccount(@EventProperty("First Name") String firstName, @EventProperty("Last Name") String lastName) {
     ...
 }
 ```
